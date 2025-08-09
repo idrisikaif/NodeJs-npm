@@ -23,6 +23,16 @@ app.delete("/", (req, res) => {
   res.send("Hello World delete!");
 });
 
+
+app.get("/index" ,(req, res) => {
+  console.log("this is a index");
+  res.sendFile("templates/index.html", {root: __dirname});
+});
+
+app.get("/api" , (req, res) => {
+  res.json({a:1, b:2, c:3 ,d:4 , name:["kaif","harry"]})
+});
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
